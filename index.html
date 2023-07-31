@@ -6,58 +6,58 @@
     <link rel="stylesheet" href="./index.css" />
     <title>dating apps</title>
   </head>
-  <body>
+  <body id="body">
     <header class="header">
-      <h1 id="h1">ADMINISTRADOR DE PACIENTES DE VETERINARIA</h1>
-    <form>
-      <fieldset>
-        <legend id="h2">Datos del Paciente</legend>
-        <div class="labelInput">
-          <label class="nameLabel">Nombre de la mascota</label>
-          <div class="nameInput">
-            <input type="text" id="mascota" name="mascota" class="form" placeholder="Nombre mascota">
-          </div>
-        </div>
-        <div class="labelInput">
-            <label class="nameLabel">Raza</label>
-            <div class="nameInput">
-              <input type="text" id="raza" name="raza" class="form" placeholder="Raza de la mascota">
+      <div id="spaceLogo">
+        <img src="asset/logo.png" alt="logo" id="logo" />
+      </div>
+      <div id="spaceh1">
+        <h1>ADMINISTRADOR DE PACIENTES DE VETERINARIA</h1>
+      </div>
+    </header>
+
+    <div class="DateAdministrator">
+      <div class="Contact-form">
+        <div class="dateControl">
+          <h2>Datos del Paciente</h2>
+          <form id="form">
+            <div class="lableInput">
+              <label for="housePetName">Nombre de la Mascota</label>
+              <input type="text" name="housePetName" class="input" />
             </div>
-        </div>
-        <div class="labelInput">
-            <label class="nameLabel">Nombre del Propietario</label>
-            <div class="nameInput">
-            <input type="text" id="propietario" name="propietario" class="form" placeholder="Nombre del Propietario">
+            <div class="lableInput">
+              <label for="owner">Propietario</label>
+              <input type="text" name="owner" class="input" />
             </div>
-        </div>
-        <div class="labelInput">
-            <label class="nameLabel">Telefono</label>
-            <div class="nameInput">
-            <input type="tel" id="telefono" name="Telefono" class="form" placeholder="Numero de telefono">
+            <div class="lableInput">
+              <label for="Phone">Telefono</label>
+              <input type="tel" name="Phone" class="input" />
             </div>
-        </div>
-        <div class="labelInput">
-            <label class="nameLabel">Fecha</label>
-            <div class="nameInput">
-            <input type="date" id="time" name="time" class="form">
+            <div class="lableInput">
+              <label for="Date">Fecha</label>
+              <input type="date" name="Date" class="input" />
             </div>
-        </div>
-        <div class="labelInput">
-            <label class="nameLabel">Hora</label>
-            <div class="nameInput">
-            <input type="time" id="hora" name="hora" class="form" >
+            <div class="lableInput">
+              <label for="Time">Hora</label>
+              <input type="time" name="Time" class="input" />
             </div>
-        </div>
-        <div class="labelInput">
-            <label class="nameLabel">sintomas</label>
-            <div class="nameInput">
-            <textarea id="sintomas" name="sintomas" class="form">
+            <div class="lableInput">
+              <label clas="symmtoms">sintomas</label>
+            </div>
+            <textarea id="symptom" name="symptom" class="form-control">
             </textarea>
+            <div class="Button">
+              <button type="submit" class="onButton">Crear citas</button>
+            </div>
+          </form>
         </div>
-        <div class="Boton">
-            <button type="submit" class="button">Crear Cita</button>
-        </div>
-      </fieldset>
-    </form>
+      </div>
+      <div class="DateAppointments">
+        <h3 id="manage">Administra tus citas</h3>
+        <ul id="DateList"></ul>
+      </div>
+    </div>
+
+    <footer class="footer">TE ESPERAMOS</footer>
   </body>
 </html>

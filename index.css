@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+.header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(4, 99, 128);
+}
+
+#spaceLogo {
+  width: 450px;
+  height: 310px;
+}
+#logo {
+  border-radius: 5%;
+  justify-content: end;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0px 0px 32px var(--background-color);
+}
+
+h1 {
+  font-size: 50px;
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.DateAdministrator {
+  padding: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1850px;
+}
+
+.Contact-form {
+  background-color: blue;
+  line-height: 30px;
+  font-size: 20px;
+}
+.dateControl {
+  margin-left: 40px;
+}
+
+.DateAppointments {
+  background-color: blueviolet;
+}
+
+.lableInput,
+.input {
+  width: 100%;
+}
