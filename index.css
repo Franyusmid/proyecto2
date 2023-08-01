@@ -4,14 +4,10 @@
   box-sizing: border-box;
 }
 
-:root {
-  --background-color: white;
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .header {
   padding: 20px;
@@ -35,30 +31,74 @@ body {
 h1 {
   font-size: 50px;
   color: white;
-  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 .DateAdministrator {
   padding: 1.5em;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1850px;
+  display: flex;
+  height: 750px;
+  background-color: rgb(204, 82, 122);
 }
 
+.DateAppointments,
 .Contact-form {
-  background-color: blue;
-  line-height: 30px;
-  font-size: 20px;
+  flex-basis: 100px;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
+
 .dateControl {
-  margin-left: 40px;
+  line-height: 40px;
 }
 
-.DateAppointments {
-  background-color: blueviolet;
+h2 {
+  font-size: 40px;
+  margin: 10px;
 }
 
-.lableInput,
+.form {
+  justify-content: center;
+}
+
+.label {
+  font-size: 30px;
+  font-weight: bold;
+}
 .input {
   width: 100%;
+  height: 30px;
+}
+h3 {
+  font-size: 40px;
+}
+
+#symptom {
+  width: 100%;
+  height: 80px;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+.onButton {
+  flex-basis: 200px;
+  height: 50px;
+  border-radius: 2%;
+  background-color: green;
+}
+
+.footer {
+  background-color: rgb(4, 99, 128);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h4 {
+  font-size: 50px;
+  color: white;
 }
