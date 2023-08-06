@@ -1,105 +1,90 @@
-// clases
-class form {
-  constructor(
-    housePetName,
-    owner,
-    Phone,
-    Date,
-    Time,
-    symptom,
-    onButton,
-    DateList
-  ) {
-    this.housePetName = housePetName;
-    this.owner = owner;
-    this.Phone = Phone;
-    this.Date = Date;
-    this.Time = Time;
-    this.symptom = symptom;
-    this.onButton = onButton;
-    this.DateList = DateList;
-  }
-}
-
-// seleccion
-const housePetName = document.querySelector(".housePetName");
+// 1.seleccion
+const HousePetName = document.querySelector(".housePetName");
 const owner = document.querySelector(".owner");
 const Phone = document.querySelector(".Phone");
 const Date = document.querySelector(".Date");
 const Time = document.querySelector(".Time");
 const symptom = document.querySelector("#symptom");
 const onButton = document.querySelector("#onButton");
+const form = document.querySelector("#form");
+// Contenedor para las citas
 const DateList = document.querySelector("#DateList");
-console.log(
-  housePetName,
-  owner,
-  Phone,
-  Date,
-  Time,
-  symptom,
-  onButton,
-  DateList
-);
-
-// Eventos O Manipulacion
-
+document.addEventListener("DOMContentLoaded", paint);
+// console.log("DateList", DateList);
 onButton.addEventListener("click", (evt) => {
-  evt.preventDefault();
+  // Estraccion de Datos
+  evt.preventDefault(evt);
   const object = {
-    housePetName: housePetName.value,
-    owner: owner.value,
-    Phone: Phone.value,
-    Date: Date.value,
-    Time: Time.value,
-    symptom: symptom.value,
+    inputHousePetName: HousePetName.value,
+    inputOwner: owner.value,
+    inputPhone: Phone.value,
+    inputDate: Date.value,
+    inputtime: Time.value,
+    inputsymtom: symptom.value,
   };
-  let datos = JSON.parse(localStorage.getItem("valores"));
-  if (datos === null) {
-    datos = [];
+  datum = JSON.parse(localStorage.getItem("value"));
+  if (datum == null) {
+    data = [];
   }
-  datos.push(object);
-  localStorage.setItem("valores", JSON.stringify(datos));
 
-  DateList.innerHTML = datos
-    .map((dato) => {
-      return `<h3>${dato.housePetName}</h3>
-      <h2></h2>`;
-    })
-    .join("");
+  data.push(object);
+  localStorage.setItem("value", JSON.stringify(data));
+
+  form.reset();
+  paint();
 });
 
+function paint() {
+  data = JSON.parse(localStorage.getItem("value"));
+  DateList.innerHTML = data
+    .map((datum, index) => {
+      return `
+      <section class="card">
+        <span class"dsf">Nombre de la Mascota:</span>"${datum.inputHousePetName}</span>
+        <span>${datum.inputOwner}</span>
+        <span>${datum.inputPhone}</span>
+        <span>${datum.inputDate}</span>
+        <span>${datum.inputtime}</span>
+        <span>${datum.inputsymtom}</span>
+        <button class="butedit" onClick="edit (${index})">editar</button>
+        <button class="butClean" onClick="clean(${index})">borrar</button>
+      </section>
+      `;
+    })
+    .join("");
+}
 
+function edit(index) {
+  const housePetNameEdit = prompt(
+    "edita el nombre de la mascota",
+    data[index].inputHousePetName
+  );
+  data[index].inputHousePetName = housePetNameEdit;
 
-// [2:39 p. m.] Cristhian Johan Rodriguez Cardona
+  const ownerEdit = prompt(
+    "edita el nombre del propietario",
+    data[index].inputOwner
+  );
+  data[index].inputOwner = ownerEdit;
 
-// function pintar(){
+  const PhoneEdit = prompt(
+    "edita el numero de Telefono",
+    data[index].inputPhone
+  );
+  data[index].inputPhone = PhoneEdit;
 
-//     datos = JSON.parse(localStorage.getItem("valores"));
+  const DateEdit = prompt("edita la fecha", data[index].inputDate);
+  data[index].inputDate = DateEdit;
 
-//     mostrar.innerHTML = datos
+  const symptomEdit = prompt("edita los sintomas", data[index].inputsymtom);
+  data[index].inputsymtom = symptomEdit;
 
-//     .map((dato, index) => {
+  localStorage.setItem("value", JSON.stringify(data));
+  paint();
+}
 
-//         return `
-
-//         <div class="card">
-
-//         <h3>${dato.nombre}</h3>
-
-//         <h3>${dato.telefono}</h3>
-
-//         <h3>${dato.precio}</h3>
-
-//         <button class="botones" onClick="editar(${index})">editar</button>
-
-//         <button class="botones" onClick="borrar(${index})">borrar</button>
-
-//         </div>
-
-//         `;
-
-//         })
-
-//         .join("");
-
+function clean(index) {
+  data.splice(index, 1);
+  localStorage.setItem("value", JSON.stringify(data));
+  paint();
 }

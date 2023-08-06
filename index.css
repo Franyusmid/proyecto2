@@ -35,18 +35,18 @@ h1 {
 }
 
 .DateAdministrator {
-  padding: 1.5em;
+  padding: 40px;
   display: flex;
   height: 750px;
   background-color: rgb(204, 82, 122);
+  column-gap: 50px;
 }
 
 .DateAppointments,
 .Contact-form {
   flex-basis: 100px;
-  display: flex;
-  justify-content: center;
   flex-grow: 1;
+  grid-template-columns: 15px;
 }
 
 .dateControl {
@@ -89,7 +89,8 @@ h3 {
   border-radius: 7px;
 }
 
-.Button {
+.Button,
+.butedit {
   display: flex;
   justify-content: center;
   padding: 1em;
