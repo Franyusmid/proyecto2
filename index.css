@@ -25,7 +25,7 @@ body {
   justify-content: end;
   width: 300px;
   height: 300px;
-  box-shadow: 0px 0px 32px var(--background-color);
+  box-shadow: 0px 0px 32px white;
 }
 
 h1 {
@@ -44,7 +44,6 @@ h1 {
 
 .DateAppointments,
 .Contact-form {
-  flex-basis: 100px;
   flex-grow: 1;
   grid-template-columns: 15px;
 }
@@ -79,6 +78,12 @@ h2 {
 }
 h3 {
   font-size: 40px;
+  text-align: center;
+}
+
+#DateList {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #symptom {
@@ -95,14 +100,30 @@ h3 {
   padding: 1em;
 }
 #onButton {
-  flex-basis: 200px;
-  height: 50px;
-  border-radius: 2%;
-  background-color: rgb(79, 36, 200);
-  font-size: 20px;
-  color: white;
+  border: 0;
+  background-image: linear-gradient(150deg, #9500ff, #09f, #00ddff);
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+  justify-content: center;
+}
+#onButton span {
+  background-color: #111;
+  padding: 16px 24px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
+#onButton:hover span {
+  background: none;
+}
+#onButton:active {
+  transform: scale(1.5);
+}
 .footer {
   background-color: rgb(4, 99, 128);
   height: 200px;
@@ -114,4 +135,106 @@ h3 {
 h4 {
   font-size: 50px;
   color: white;
+}
+
+.card {
+  margin-top: 20px;
+  margin-left: 5%;
+  width: 45%;
+  padding: 8px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 32px rgb(4, 99, 128);
+}
+
+.SpaceLabel {
+  display: flex;
+}
+
+.Name {
+  font-weight: bold;
+}
+
+.SpaceButton {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.ButtonE,
+.ButtonC {
+  flex-basis: 60px;
+  border-radius: 5px;
+  color: white;
+}
+
+.ButtonE {
+  background-color: green;
+}
+.ButtonC {
+  background-color: red;
+}
+
+/* RENPONSIVE DISEGN
+-imagenes fluidas
+-Media queris*/
+
+@media (max-width: 800px) {
+  .header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+  }
+  h1 {
+    margin: none;
+    font-size: 25px;
+  }
+
+  #spaceLogo {
+    width: 200px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #logo {
+    border-radius: 5%;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 32px white;
+  }
+
+  h2,
+  h3 {
+    font-size: 20px;
+  }
+
+  .label {
+    font-size: 18px;
+  }
+
+  .DateAdministrator {
+    display: flex;
+    flex-wrap: wrap;
+    height: 1500px;
+  }
+
+  .Contact-form {
+    height: 500px;
+  }
+
+  .footer {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4 {
+    font-size: 25px;
+    color: white;
+  }
 }

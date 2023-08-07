@@ -40,34 +40,34 @@ function paint() {
     .map((datum, index) => {
       return `
       <section class="card">
-        <div class="label">
-          <p class="LabelName">Mascota: </p>
+        <div class="SpaceLabel">
+          <p class="Name">Mascota: </p>
           <P class="outValue"> ${datum.inputHousePetName}</p>
         </div>
-        <div class="label">
-          <p class="LabelName">Propietario: </p>
+        <div class="SpaceLabel">
+          <p class="Name">Propietario: </p>
           <p class="outValue">${datum.inputOwner}</p>
         </div>
-        <div class="label">
-          <p class="LabelName">Telefono: </p>
-          <p class="LabelName">${datum.inputPhone}</p>
+        <div class="SpaceLabel">
+          <p class="Name">Telefono: </p>
+          <p class="outValue">${datum.inputPhone}</p>
         </div> 
-        <div class="label">
-          <p class="LabelName">Fecha:</p>
+        <div class="SpaceLabel">
+          <p class="Name">Fecha:</p>
           <p class="outValue">${datum.inputDate}</p>
         </div>  
         <div
-        <div class="label">
-          <p class="LabelName">Hora:</p>
-          <p>${datum.inputtime}</p>
+        <div class="SpaceLabel">
+          <p class="Name">Hora:</p>
+          <p class="outValue">${datum.inputtime}</p>
         </div>
-        <div class="label">
-          <p class="LabelName">Sintomas:</p>
-          <p>${datum.inputsymtom}</p>
+        <div class="SpaceLabel">
+          <p class="Name">Sintomas:</p>
+          <p class="outValue">${datum.inputsymtom}</p>
         </div>  
         <div class="SpaceButton">
-          <button class="Button1" onClick="edit (${index})">editar</button>
-          <button class="Button1" onClick="clean(${index})">borrar</button>
+          <button class="ButtonE" onClick="edit (${index})">editar</button>
+          <button class="ButtonC" onClick="clean(${index})">borrar</button>
         </div>
       </section>
       `;
