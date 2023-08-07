@@ -37,7 +37,7 @@ h1 {
 .DateAdministrator {
   padding: 40px;
   display: flex;
-  height: 750px;
+  height: auto;
   background-color: rgb(204, 82, 122);
   column-gap: 50px;
 }
@@ -46,6 +46,7 @@ h1 {
 .Contact-form {
   flex-grow: 1;
   grid-template-columns: 15px;
+  height: auto;
 }
 
 .dateControl {
@@ -84,6 +85,7 @@ h3 {
 #DateList {
   display: flex;
   flex-wrap: wrap;
+  flex-basis: auto;
 }
 
 #symptom {
@@ -217,13 +219,12 @@ h4 {
   }
 
   .DateAdministrator {
-    display: flex;
-    flex-wrap: wrap;
-    height: 1500px;
+    display: grid;
+    height: auto;
   }
 
   .Contact-form {
-    height: 500px;
+    height: auto;
   }
 
   .footer {
@@ -240,5 +241,6 @@ h4 {
 
   .card {
     width: 100%;
+    display: grid;
   }
 }
