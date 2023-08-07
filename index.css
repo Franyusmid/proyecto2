@@ -89,8 +89,7 @@ h3 {
   border-radius: 7px;
 }
 
-.Button,
-.butedit {
+.Button {
   display: flex;
   justify-content: center;
   padding: 1em;

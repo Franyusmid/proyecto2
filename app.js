@@ -40,14 +40,35 @@ function paint() {
     .map((datum, index) => {
       return `
       <section class="card">
-        <span class"dsf">Nombre de la Mascota:</span>"${datum.inputHousePetName}</span>
-        <span>${datum.inputOwner}</span>
-        <span>${datum.inputPhone}</span>
-        <span>${datum.inputDate}</span>
-        <span>${datum.inputtime}</span>
-        <span>${datum.inputsymtom}</span>
-        <button class="butedit" onClick="edit (${index})">editar</button>
-        <button class="butClean" onClick="clean(${index})">borrar</button>
+        <div class="label">
+          <p class="LabelName">Mascota: </p>
+          <P class="outValue"> ${datum.inputHousePetName}</p>
+        </div>
+        <div class="label">
+          <p class="LabelName">Propietario: </p>
+          <p class="outValue">${datum.inputOwner}</p>
+        </div>
+        <div class="label">
+          <p class="LabelName">Telefono: </p>
+          <p class="LabelName">${datum.inputPhone}</p>
+        </div> 
+        <div class="label">
+          <p class="LabelName">Fecha:</p>
+          <p class="outValue">${datum.inputDate}</p>
+        </div>  
+        <div
+        <div class="label">
+          <p class="LabelName">Hora:</p>
+          <p>${datum.inputtime}</p>
+        </div>
+        <div class="label">
+          <p class="LabelName">Sintomas:</p>
+          <p>${datum.inputsymtom}</p>
+        </div>  
+        <div class="SpaceButton">
+          <button class="Button1" onClick="edit (${index})">editar</button>
+          <button class="Button1" onClick="clean(${index})">borrar</button>
+        </div>
       </section>
       `;
     })
