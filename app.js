@@ -97,6 +97,9 @@ function edit(index) {
   const DateEdit = prompt("edita la fecha", data[index].inputDate);
   data[index].inputDate = DateEdit;
 
+  const timeEdit = prompt("edita la hora", data[index].inputtime);
+  data[index].inputtime = timeEdit;
+
   const symptomEdit = prompt("edita los sintomas", data[index].inputsymtom);
   data[index].inputsymtom = symptomEdit;
 
