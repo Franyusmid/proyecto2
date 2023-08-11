@@ -1,4 +1,6 @@
 // 1.seleccion
+/*Las selecciones tambien se pueden realizar dentro de los eventos no obstante es mejor 
+ralizarlo por separado para una mejor estructura del codigo*/
 const HousePetName = document.querySelector(".housePetName");
 const owner = document.querySelector(".owner");
 const Phone = document.querySelector(".Phone");
@@ -11,9 +13,14 @@ const form = document.querySelector("#form");
 const DateList = document.querySelector("#DateList");
 document.addEventListener("DOMContentLoaded", paint);
 // console.log("DateList", DateList);
+// 2.Eventos
+// se pasa 2 arguementos
+// 1-el primer argumento es lo que se hece y el 2- es una funcio(colbag condicionada por la fucion)
+// onButton.addEventListener("lo que se hace", (la  fucion)
 onButton.addEventListener("click", (evt) => {
-  // Estraccion de Datos
   evt.preventDefault(evt);
+  /*.Value es un atributo que extrae el valor del input*/
+
   const object = {
     inputHousePetName: HousePetName.value,
     inputOwner: owner.value,
@@ -22,19 +29,33 @@ onButton.addEventListener("click", (evt) => {
     inputtime: Time.value,
     inputsymtom: symptom.value,
   };
+
+  /* LOCAL STORAGE 
+  Almacenemiento de datos ennel navegador
+  No hay  expiracion 
+  se utiliza para guardar datos en persistencia.No importa
+  el el usuario refresca la pantalla, el dato se mantiene*/
+
+  // localStorage.setItem: se utiliza para  generar o insertar  los datos en el navegador
+  // localStorage.getItem:se paa obtener los datos que se crean en el navegdor
+  // LocalStorage solo recibe string(texto)
+  //localStorage: borra todos los  datos almacenados
+  // localStorage.removeItem: se utiliza para borrar un valor en espacifico
+
   datum = JSON.parse(localStorage.getItem("value"));
   if (datum == null) {
     data = [];
   }
-
   data.push(object);
   localStorage.setItem("value", JSON.stringify(data));
-
+  // JSON.stringify:Convierte un objeto o valor en una cadena de texto JSON,
   form.reset();
   paint();
 });
 
 function paint() {
+  // JSON.parse convierte el texto en un arrglo desde el localStorage
+  // .map sirve para itinerar un arreglo es decir conectar los string de clave: valor
   data = JSON.parse(localStorage.getItem("value"));
   DateList.innerHTML = data
     .map((datum, index) => {

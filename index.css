@@ -71,7 +71,7 @@ h2 {
 .Phone,
 .Date,
 .Time {
-  width: 100%;
+  width: auto;
   height: 30px;
   font-size: 20px;
   border-color: black;
