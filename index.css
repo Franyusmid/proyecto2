@@ -240,7 +240,7 @@ h4 {
   }
 
   .card {
-    width: 100%;
+    width: auto;
     display: grid;
   }
 }
